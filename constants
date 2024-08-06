@@ -1,0 +1,70 @@
+package main
+
+import "fmt"
+
+// Constants translated from constants.js
+const (
+    // Transaction Types
+    TRANSACTION = 0x0001
+    TRIGGER     = 0x2000
+    REJECT      = 0xe000
+
+    // Error codes
+    VEOK            = 0         // No error
+    VERROR          = 1         // General error
+    VEBAD           = 2         // Bad value
+    VEMPTY          = 3         // Empty block
+    VEJUNK          = 4         // Junk block
+    VEBADHEADER     = 5         // Bad header
+    VEBADPLIST      = 6         // Bad plist
+
+    // Block Types
+    BLOCK_NORMAL   = "normal"
+    BLOCK_REJECT   = "reject"
+    BLOCK_TRIGGER  = "trigger"
+    BLOCK_ORPHAN   = "orphan"
+    BLOCK_PSEUDO   = "pseudo"
+    BLOCK_GENESIS  = "genesis"
+    BLOCK_NEOGENESIS = "neogenesis"
+
+    // Network constants
+    NETWORK_PORT = 2095
+
+    // Maximum values
+    MAXBLOCKSIZE = 8388608 // 8MB
+    MAXBLTXSIZE  = 2097152 // 2MB
+)
+
+// Errors
+var (
+    ErrNotImplemented = fmt.Errorf("not implemented") // Example error
+)
+
+func main() {
+    fmt.Println("Transaction Types:")
+    fmt.Printf("TRANSACTION: 0x%X\n", TRANSACTION)
+    fmt.Printf("TRIGGER: 0x%X\n", TRIGGER)
+    fmt.Printf("REJECT: 0x%X\n", REJECT)
+
+    fmt.Println("Error Codes:")
+    fmt.Printf("VEOK: %d\n", VEOK)
+    fmt.Printf("VERROR: %d\n", VERROR)
+    fmt.Printf("VEBAD: %d\n", VEBAD)
+    fmt.Printf("VEBADHEADER: %d\n", VEBADHEADER)
+
+    fmt.Println("Block Types:")
+    fmt.Println("BLOCK_NORMAL:", BLOCK_NORMAL)
+    fmt.Println("BLOCK_REJECT:", BLOCK_REJECT)
+    fmt.Println("BLOCK_TRIGGER:", BLOCK_TRIGGER)
+    fmt.Println("BLOCK_ORPHAN:", BLOCK_ORPHAN)
+    fmt.Println("BLOCK_PSEUDO:", BLOCK_PSEUDO)
+    fmt.Println("BLOCK_GENESIS:", BLOCK_GENESIS)
+    fmt.Println("BLOCK_NEOGENESIS:", BLOCK_NEOGENESIS)
+
+    fmt.Println("Network Constants:")
+    fmt.Printf("NETWORK_PORT: %d\n", NETWORK_PORT)
+
+    fmt.Println("Maximum Values:")
+    fmt.Printf("MAXBLOCKSIZE: %d\n", MAXBLOCKSIZE)
+    fmt.Printf("MAXBLTXSIZE: %d\n", MAXBLTXSIZE)
+}
